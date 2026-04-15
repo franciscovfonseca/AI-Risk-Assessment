@@ -9,7 +9,7 @@ Icons representing risk analysis, compliance shields and financial data on both 
 Modern, corporate, minimal. No people. Color accents: bright electric blue and white.
 High contrast - text must be clearly readable."
 -->
-<img src="banner.png" alt="AI Risk Assessment - NorthPoint Financial Services" width="100%"/>
+<img src="docs/banner.png" alt="AI Risk Assessment - NorthPoint Financial Services" width="100%"/>
 
 # ⚠️ AI Risk Assessment - NorthPoint Financial Services
 
