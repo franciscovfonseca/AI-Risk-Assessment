@@ -21,7 +21,6 @@ High contrast - text must be clearly readable."
 [![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=for-the-badge)]()
 
 **Phase 2 of an end-to-end AI Governance Programme**  
-**Phase 2: AI Risk Assessment**
 
 </div>
 
