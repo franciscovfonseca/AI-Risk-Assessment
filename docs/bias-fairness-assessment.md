@@ -143,12 +143,12 @@ Following implementation of initial mitigations, NorthPoint should establish ong
 
 | Priority | Action | Owner | Target Date |
 |---|---|---|---|
-| 🔴 1 | Commission independent disparate impact audit across race, gender, age, disability | Head of Credit Risk | Q2 2025 |
-| 🔴 2 | Audit proxy variables - postcode and employment type - for protected characteristic correlation | Head of Data Governance | Q2 2025 |
-| 🔴 3 | Implement fairness-constrained model retraining if disparate impact confirmed | Head of Credit Risk | Q3 2025 |
-| 🟡 4 | Establish ongoing bias monitoring dashboard with threshold alerts | Head of Credit Risk | Q2 2025 |
-| 🟡 5 | Develop manual review pathway for edge cases (disability income, thin-file applicants) | Head of Credit Operations | Q3 2025 |
-| 🟢 6 | Explore alternative data sources for thin-file applicants | Head of Data Engineering | Q4 2025 |
+| 🔴 1 | Commission independent disparate impact audit across race, gender, age, disability | Head of Credit Risk | Q2 2026 |
+| 🔴 2 | Audit proxy variables - postcode and employment type - for protected characteristic correlation | Head of Data Governance | Q2 2026 |
+| 🔴 3 | Implement fairness-constrained model retraining if disparate impact confirmed | Head of Credit Risk | Q3 2026 |
+| 🟡 4 | Establish ongoing bias monitoring dashboard with threshold alerts | Head of Credit Risk | Q2 2026 |
+| 🟡 5 | Develop manual review pathway for edge cases (disability income, thin-file applicants) | Head of Credit Operations | Q3 2026 |
+| 🟢 6 | Explore alternative data sources for thin-file applicants | Head of Data Engineering | Q4 2026 |
 
 ---
 
