@@ -28,7 +28,7 @@ High contrast - text must be clearly readable."
 
 ## 📌 Project Overview
 
-**NorthPoint Financial Services** completed a full AI system inventory in Phase 1, identifying four production AI systems and classifying two - the **Credit Scoring Engine (NP-001)** and the **Fraud Detection System (NP-002)** - as HIGH RISK under EU AI Act Annex III.
+**NorthPoint Financial Services** completed a full AI system inventory in [Phase 1](https://github.com/franciscovfonseca/AI-System-Inventory/tree/main), identifying four production AI systems and classifying two - the **Credit Scoring Engine (NP-001)** and the **Fraud Detection System (NP-002)** - as HIGH RISK under EU AI Act Annex III.
 
 Classification alone is not enough. The EU AI Act mandates that HIGH RISK systems undergo a documented risk management process (Article 9) before deployment and throughout their lifecycle. Phase 2 delivers that process.
 
@@ -181,33 +181,6 @@ The risk assessment findings were translated into a board-level governance memo 
 
 → Full governance memo: [`docs/governance-memo.md`](docs/governance-memo.md)
 
----
-
-## 🔗 Programme Context
-
-This project is **Phase 2** of NorthPoint Financial Services' AI Governance Programme:
-
-| Phase | Project | Status |
-|---|---|---|
-| Phase 1 | [AI System Inventory & Classification Engine](https://github.com/franciscovfonseca/AI-System-Inventory) | ✅ Complete |
-| Phase 2 | AI Risk Assessment *(this project)* | ✅ Complete |
-| Phase 3 | AI Controls & Remediation Framework | 🔄 Coming Soon |
-
----
-
-## 📁 Repository Structure
-
-```
-AI-Risk-Assessment/
-├── README.md                            ← You are here
-├── banner.png                           ← Project banner
-├── docs/
-│   ├── risk-assessment.md               ← Full risk registers - NP-001 & NP-002
-│   ├── bias-fairness-assessment.md      ← Bias & fairness analysis - NP-001
-│   ├── eu-ai-act-article9-review.md     ← Article 9 compliance checklist
-│   └── governance-memo.md              ← Board-level executive memo
-└── LICENSE
-```
 
 ---
 
