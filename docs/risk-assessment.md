@@ -1,10 +1,10 @@
-# AI Risk Assessment — NorthPoint Financial Services
+# AI Risk Assessment - NorthPoint Financial Services
 **Document Type:** Risk Register  
-**Classification:** Internal — Restricted  
+**Classification:** Internal - Restricted  
 **Systems Covered:** NP-001 Credit Scoring Engine · NP-002 Fraud Detection System  
 **Framework:** ISO 31000 · NIST AI RMF (Map & Measure) · EU AI Act Article 9  
 **Prepared by:** AI Governance Office  
-**Status:** ✅ Complete — Approved for Board Review
+**Status:** ✅ Complete - Approved for Board Review
 
 ---
 
@@ -29,15 +29,15 @@ This risk assessment follows ISO 31000:2018 risk management guidelines and the N
 
 ---
 
-## Part 1 — NP-001: Credit Scoring Engine
+## Part 1 - NP-001: Credit Scoring Engine
 
 **System description:** Automated ML model assessing creditworthiness and determining loan eligibility for NorthPoint retail and SME customers. Outputs a credit score and a binary eligibility decision (approve/decline) with no mandatory human review for standard applications.
 
-**Risk classification:** 🔴 HIGH RISK — EU AI Act Annex III §5(b)
+**Risk classification:** 🔴 HIGH RISK - EU AI Act Annex III §5(b)
 
 ---
 
-### Risk Register — NP-001
+### Risk Register - NP-001
 
 ---
 
@@ -62,11 +62,11 @@ This risk assessment follows ISO 31000:2018 risk management guidelines and the N
 4. Establish monthly automated bias monitoring with threshold alerts to the AI Governance Office
 5. Document all bias findings and mitigations in the technical file per Article 11
 
-| **Residual Risk** | 🟡 Medium — bias risk cannot be fully eliminated; ongoing monitoring is the primary control |
+| **Residual Risk** | 🟡 Medium - bias risk cannot be fully eliminated; ongoing monitoring is the primary control |
 |---|---|
 | **Owner** | Head of Credit Risk |
 | **Review Frequency** | Monthly monitoring; quarterly formal review |
-| **Target Completion** | Q2 2025 |
+| **Target Completion** | Q2 2026 |
 
 ---
 
@@ -90,11 +90,11 @@ This risk assessment follows ISO 31000:2018 risk management guidelines and the N
 3. Train customer-facing staff on how to communicate credit decision explanations
 4. Establish internal appeals process with human review for contested decisions
 
-| **Residual Risk** | 🟢 Low — explainability layer addresses core obligation; human appeals pathway provides backstop |
+| **Residual Risk** | 🟢 Low - explainability layer addresses core obligation; human appeals pathway provides backstop |
 |---|---|
 | **Owner** | Head of Credit Risk |
 | **Review Frequency** | Quarterly |
-| **Target Completion** | Q2 2025 |
+| **Target Completion** | Q2 2026 |
 
 ---
 
@@ -104,25 +104,25 @@ This risk assessment follows ISO 31000:2018 risk management guidelines and the N
 |---|---|
 | **Risk ID** | RISK-NP001-03 |
 | **Category** | Data Governance |
-| **Description** | Historical lending data used to train NP-001 may encode past discriminatory practices — e.g., redlining, gender-based lending restrictions — perpetuating and automating historical inequities at scale. |
+| **Description** | Historical lending data used to train NP-001 may encode past discriminatory practices - e.g., redlining, gender-based lending restrictions - perpetuating and automating historical inequities at scale. |
 | **Root Cause** | Training data spans 15+ years of lending decisions made under regulatory frameworks that have since changed. Discrimination that was legal or undetected in prior periods is now embedded in model weights. |
 | **Likelihood** | Medium |
 | **Impact** | Critical |
 | **Inherent Risk** | 🔴 High |
 | **Affected Stakeholders** | All loan applicants; NorthPoint risk and legal; regulators |
-| **Regulatory Reference** | EU AI Act Article 10(2) — training data free of discriminatory effects; Article 10(5) — use of special category data for bias monitoring |
+| **Regulatory Reference** | EU AI Act Article 10(2) - training data free of discriminatory effects; Article 10(5) - use of special category data for bias monitoring |
 
 **Mitigation measures:**
-1. Conduct full data lineage audit of training dataset — identify data from pre-2010 periods for review
+1. Conduct full data lineage audit of training dataset - identify data from pre-2010 periods for review
 2. Re-weight or re-sample training data to reduce influence of historically biased samples
 3. Apply Article 10(5) exemption to use sensitive demographic data for bias detection and correction only
 4. Document data governance decisions in technical file with legal basis for any sensitive data processing
 
-| **Residual Risk** | 🟡 Medium — legacy data issues cannot be fully corrected retrospectively; ongoing data refresh programme is primary long-term control |
+| **Residual Risk** | 🟡 Medium - legacy data issues cannot be fully corrected retrospectively; ongoing data refresh programme is primary long-term control |
 |---|---|
 | **Owner** | Head of Data Governance |
 | **Review Frequency** | Annually (data audit); monthly (outcome monitoring) |
-| **Target Completion** | Q3 2025 |
+| **Target Completion** | Q3 2026 |
 
 ---
 
@@ -132,25 +132,25 @@ This risk assessment follows ISO 31000:2018 risk management guidelines and the N
 |---|---|
 | **Risk ID** | RISK-NP001-04 |
 | **Category** | Performance & Robustness |
-| **Description** | The model's predictive accuracy degrades as economic conditions, customer behaviour, and lending markets evolve — resulting in increasing rates of incorrect approvals (credit losses) or incorrect refusals (missed business and customer harm). |
+| **Description** | The model's predictive accuracy degrades as economic conditions, customer behaviour and lending markets evolve - resulting in increasing rates of incorrect approvals (credit losses) or incorrect refusals (missed business and customer harm). |
 | **Root Cause** | ML models trained on historical data do not automatically adapt to distribution shift in input features or label relationships. |
 | **Likelihood** | Medium |
 | **Impact** | High |
 | **Inherent Risk** | 🟠 High |
 | **Affected Stakeholders** | NorthPoint credit risk team; loan applicants; NorthPoint P&L |
-| **Regulatory Reference** | EU AI Act Article 9(7) — post-market monitoring; Article 15 — accuracy and robustness |
+| **Regulatory Reference** | EU AI Act Article 9(7) - post-market monitoring; Article 15 - accuracy and robustness |
 
 **Mitigation measures:**
 1. Implement automated model performance monitoring with monthly accuracy, precision and recall reporting
-2. Define drift thresholds that trigger mandatory model review — PSI (Population Stability Index) > 0.2
+2. Define drift thresholds that trigger mandatory model review - PSI (Population Stability Index) > 0.2
 3. Establish 6-monthly model retraining schedule with full re-validation before deployment
 4. Maintain challenger model in shadow mode for performance comparison
 
-| **Residual Risk** | 🟢 Low — monitoring and retraining schedule directly addresses drift risk |
+| **Residual Risk** | 🟢 Low - monitoring and retraining schedule directly addresses drift risk |
 |---|---|
 | **Owner** | Head of Credit Risk |
 | **Review Frequency** | Monthly monitoring; 6-monthly formal review |
-| **Target Completion** | Q1 2025 (monitoring); Q3 2025 (first scheduled retrain) |
+| **Target Completion** | Q1 2026 (monitoring); Q3 2026 (first scheduled retrain) |
 
 ---
 
@@ -160,16 +160,16 @@ This risk assessment follows ISO 31000:2018 risk management guidelines and the N
 |---|---|
 | **Risk ID** | RISK-NP001-05 |
 | **Category** | Data Governance |
-| **Description** | Missing, incorrect, or stale data in the applicant input pipeline produces inaccurate credit scores — resulting in incorrect decisions for individual applicants. |
+| **Description** | Missing, incorrect or stale data in the applicant input pipeline produces inaccurate credit scores - resulting in incorrect decisions for individual applicants. |
 | **Likelihood** | Low |
 | **Impact** | High |
 | **Inherent Risk** | 🟡 Medium |
 | **Affected Stakeholders** | Individual loan applicants; credit operations team |
-| **Regulatory Reference** | EU AI Act Article 10 — data quality requirements |
+| **Regulatory Reference** | EU AI Act Article 10 - data quality requirements |
 
 **Mitigation measures:**
 1. Input validation checks at pipeline ingestion (completeness, format, range validation)
-2. Automated alerts for missing critical fields — decision suppressed until data quality confirmed
+2. Automated alerts for missing critical fields - decision suppressed until data quality confirmed
 3. Quarterly data quality audit with findings reported to AI Governance Office
 
 | **Residual Risk** | 🟢 Low |
@@ -191,44 +191,44 @@ This risk assessment follows ISO 31000:2018 risk management guidelines and the N
 
 ---
 
-## Part 2 — NP-002: Fraud Detection System
+## Part 2 - NP-002: Fraud Detection System
 
 **System description:** Real-time ML model detecting fraudulent transactions and placing automatic holds on customer accounts or card transactions flagged as suspicious. Decisions are made in milliseconds with no human review at point of decision.
 
-**Risk classification:** 🔴 HIGH RISK — EU AI Act Annex III §5(b)
+**Risk classification:** 🔴 HIGH RISK - EU AI Act Annex III §5(b)
 
 ---
 
-### Risk Register — NP-002
+### Risk Register - NP-002
 
 ---
 
-#### RISK-NP002-01: High False Positive Rate — Legitimate Transactions Blocked
+#### RISK-NP002-01: High False Positive Rate - Legitimate Transactions Blocked
 
 | Field | Detail |
 |---|---|
 | **Risk ID** | RISK-NP002-01 |
 | **Category** | Performance & Customer Harm |
-| **Description** | The model incorrectly flags legitimate transactions as fraudulent, causing customer accounts or cards to be blocked during genuine purchases. This causes direct customer harm, erodes trust, and creates operational burden. |
+| **Description** | The model incorrectly flags legitimate transactions as fraudulent, causing customer accounts or cards to be blocked during genuine purchases. This causes direct customer harm, erodes trust and creates operational burden. |
 | **Root Cause** | Precision-recall trade-off: models tuned for high fraud recall inevitably produce false positives. Without regular recalibration, false positive rates creep upward as transaction patterns evolve. |
 | **Likelihood** | High |
 | **Impact** | High |
 | **Inherent Risk** | 🔴 High |
 | **Affected Stakeholders** | NorthPoint customers; customer service teams; NorthPoint reputation |
-| **Regulatory Reference** | EU AI Act Article 9; FCA Consumer Duty — avoid foreseeable harm |
+| **Regulatory Reference** | EU AI Act Article 9; FCA Consumer Duty - avoid foreseeable harm |
 
 **Mitigation measures:**
 1. Establish false positive rate SLA: target < 0.5% of legitimate transactions incorrectly blocked
-2. Implement tiered response — low-confidence flags trigger customer verification (SMS/app) before block
+2. Implement tiered response - low-confidence flags trigger customer verification (SMS/app) before block
 3. Monthly false positive rate monitoring with automated escalation if SLA breached
 4. Customer dispute resolution pathway with 24-hour resolution target for incorrect blocks
 5. Quarterly model recalibration to maintain precision-recall balance
 
-| **Residual Risk** | 🟡 Medium — some false positives are unavoidable; tiered response and monitoring limit customer harm |
+| **Residual Risk** | 🟡 Medium - some false positives are unavoidable; tiered response and monitoring limit customer harm |
 |---|---|
 | **Owner** | Head of Financial Crime |
 | **Review Frequency** | Monthly |
-| **Target Completion** | Q2 2025 |
+| **Target Completion** | Q2 2026 |
 
 ---
 
@@ -238,7 +238,7 @@ This risk assessment follows ISO 31000:2018 risk management guidelines and the N
 |---|---|
 | **Risk ID** | RISK-NP002-02 |
 | **Category** | Fairness & Discrimination |
-| **Description** | The fraud model may generate disproportionately higher false positive rates for specific customer segments — e.g., customers who travel frequently, use international merchants, or have non-standard spending patterns typical of minority communities. This constitutes differential treatment. |
+| **Description** | The fraud model may generate disproportionately higher false positive rates for specific customer segments - e.g., customers who travel frequently, use international merchants or have non-standard spending patterns typical of minority communities. This constitutes differential treatment. |
 | **Likelihood** | Medium |
 | **Impact** | High |
 | **Inherent Risk** | 🔴 High |
@@ -246,7 +246,7 @@ This risk assessment follows ISO 31000:2018 risk management guidelines and the N
 | **Regulatory Reference** | EU AI Act Article 10; UK Equality Act; FCA Consumer Duty |
 
 **Mitigation measures:**
-1. Segment-level false positive rate analysis — identify customer groups experiencing >2x average false positive rate
+1. Segment-level false positive rate analysis - identify customer groups experiencing >2x average false positive rate
 2. Apply fairness constraints during model training and recalibration
 3. Establish customer feedback channel for customers to flag repeated incorrect blocks
 4. Annual third-party fairness audit
@@ -255,7 +255,7 @@ This risk assessment follows ISO 31000:2018 risk management guidelines and the N
 |---|---|
 | **Owner** | Head of Financial Crime |
 | **Review Frequency** | Quarterly |
-| **Target Completion** | Q3 2025 |
+| **Target Completion** | Q3 2026 |
 
 ---
 
@@ -270,19 +270,19 @@ This risk assessment follows ISO 31000:2018 risk management guidelines and the N
 | **Impact** | Critical |
 | **Inherent Risk** | 🔴 High |
 | **Affected Stakeholders** | NorthPoint customers; NorthPoint operations and financial crime teams |
-| **Regulatory Reference** | EU AI Act Article 15 — robustness requirements; FCA operational resilience rules |
+| **Regulatory Reference** | EU AI Act Article 15 - robustness requirements; FCA operational resilience rules |
 
 **Mitigation measures:**
 1. Define and test system capacity at 3x peak transaction volume
-2. Implement graceful degradation mode — rule-based fallback screening if ML model unavailable
+2. Implement graceful degradation mode - rule-based fallback screening if ML model unavailable
 3. Annual business continuity test for fraud detection system outage scenario
 4. Cloud auto-scaling configured to pre-empt known high-volume periods
 
-| **Residual Risk** | 🟡 Medium — residual risk from unforeseeable spikes; fallback mode provides adequate baseline protection |
+| **Residual Risk** | 🟡 Medium - residual risk from unforeseeable spikes; fallback mode provides adequate baseline protection |
 |---|---|
 | **Owner** | Head of Technology Operations |
 | **Review Frequency** | Annually (BCP test); monthly (capacity monitoring) |
-| **Target Completion** | Q2 2025 |
+| **Target Completion** | Q2 2026 |
 
 ---
 
@@ -292,17 +292,17 @@ This risk assessment follows ISO 31000:2018 risk management guidelines and the N
 |---|---|
 | **Risk ID** | RISK-NP002-04 |
 | **Category** | Performance & Robustness |
-| **Description** | Fraud techniques evolve continuously. A model trained on historical fraud patterns will degrade in detection effectiveness as adversaries adapt — resulting in increasing fraud losses. |
+| **Description** | Fraud techniques evolve continuously. A model trained on historical fraud patterns will degrade in detection effectiveness as adversaries adapt - resulting in increasing fraud losses. |
 | **Likelihood** | High |
 | **Impact** | Medium |
 | **Inherent Risk** | 🟡 Medium |
 | **Affected Stakeholders** | NorthPoint financial crime team; NorthPoint P&L |
-| **Regulatory Reference** | EU AI Act Article 9(7) — continuous risk management; Article 15 |
+| **Regulatory Reference** | EU AI Act Article 9(7) - continuous risk management; Article 15 |
 
 **Mitigation measures:**
-1. Monthly fraud detection rate monitoring — alert if detection rate drops > 5% month-on-month
+1. Monthly fraud detection rate monitoring - alert if detection rate drops > 5% month-on-month
 2. Quarterly model retraining on rolling 90-day fraud data window
-3. Threat intelligence feed integration — incorporate emerging fraud typologies into feature engineering
+3. Threat intelligence feed integration - incorporate emerging fraud typologies into feature engineering
 
 | **Residual Risk** | 🟢 Low |
 |---|---|
@@ -317,15 +317,15 @@ This risk assessment follows ISO 31000:2018 risk management guidelines and the N
 |---|---|
 | **Risk ID** | RISK-NP002-05 |
 | **Category** | Transparency & Accountability |
-| **Description** | If decision logs are incomplete or not retained, NorthPoint cannot reconstruct why a specific transaction was blocked — making it impossible to resolve customer disputes, respond to regulatory enquiries, or conduct post-incident analysis. |
+| **Description** | If decision logs are incomplete or not retained, NorthPoint cannot reconstruct why a specific transaction was blocked - making it impossible to resolve customer disputes, respond to regulatory enquiries or conduct post-incident analysis. |
 | **Likelihood** | Low |
 | **Impact** | High |
 | **Inherent Risk** | 🟡 Medium |
 | **Affected Stakeholders** | Customers disputing blocked transactions; compliance and legal; regulators |
-| **Regulatory Reference** | EU AI Act Article 12 — record-keeping; GDPR data retention obligations |
+| **Regulatory Reference** | EU AI Act Article 12 - record-keeping; GDPR data retention obligations |
 
 **Mitigation measures:**
-1. Log all model inputs, output score, decision outcome, and timestamp for every transaction assessed
+1. Log all model inputs, output score, decision outcome and timestamp for every transaction assessed
 2. Retain logs for minimum 3 years per EU AI Act Article 12 requirements
 3. Implement structured log format accessible to non-technical compliance staff for dispute investigation
 
@@ -342,11 +342,11 @@ This risk assessment follows ISO 31000:2018 risk management guidelines and the N
 |---|---|---|---|---|
 | RISK-NP002-01 | High false positive rate | 🔴 High | 🟡 Medium | Head of Financial Crime |
 | RISK-NP002-02 | Disproportionate impact on customer segments | 🔴 High | 🟡 Medium | Head of Financial Crime |
-| RISK-NP002-03 | System unavailability — high volume periods | 🔴 High | 🟡 Medium | Head of Technology Operations |
+| RISK-NP002-03 | System unavailability - high volume periods | 🔴 High | 🟡 Medium | Head of Technology Operations |
 | RISK-NP002-04 | Model drift as fraud patterns evolve | 🟡 Medium | 🟢 Low | Head of Financial Crime |
 | RISK-NP002-05 | Insufficient logging for dispute resolution | 🟡 Medium | 🟢 Low | Head of Technology Operations |
 
 ---
 
 *Document prepared by the AI Governance Office, NorthPoint Financial Services.*  
-*Next review: Q2 2025. Approved for distribution to Board Risk Committee.*
+*Next review: Q2 2026. Approved for distribution to Board Risk Committee.*
